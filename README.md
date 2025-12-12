@@ -1,1 +1,9 @@
 # A-New-Hope
+
+Link para o vídeo do jogo: https://youtu.be/GCyZdvzmSD4
+
+Explicação sobre o jogo:
+O projeto conta com a expansão de outro jogo já criado anteriormente pela aluna Juliana Crivelli chamado UAF (Ultra Alien Fighter) a expansão do jogo original pcprre para uma arquitetura de múltiplos níveis, utilizando Charmaps e telas personalizadas para criar cenários distintos. A navegação entre esses estágios é controlada pela função GerenciaFases, que verifica o progresso do jogador e aciona as rotinas de DesenhaFase correspondentes para renderizar o ambiente. Um elemento técnico central foi a implementação da variável PtrMapaAtual, que armazena dinamicamente o endereço de memória do cenário ativo, permitindo que as funções de física e renderização operem sobre o mapa correto sem erros visuais. Além disso, a lógica de inteligência artificial foi adaptada em MoveAlien_RecalculaPos para identificar a etapa final, acionando a condição MoveAlien_Fase5_Static, que substitui a movimentação padrão por um "Final Boss" estático (o exaustor da Estrela da Morte), proporcionando um desafio de conclusão único.
+
+Explicação sobre o processador:
+O código implementa um simulador funcional de um processador de 16 bits, estruturando o ciclo de instrução (Busca, Decodificação e Execução) através de uma máquina de estados finitos que gerencia o fluxo de dados entre a memória (carregada via arquivos .mif), os registradores e a ULA. A integridade da interpretação das instruções depende da função auxiliar pega_pedaco, que atua como o decodificador de binário primário: ela utiliza operações de bitwise shift e máscaras dinâmicas para extrair campos específicos da palavra de instrução de 16 bits (isolando o Opcode, endereços de registradores e valores imediatos), permitindo que o simulador identifique e execute a operação correta a cada ciclo de clock simulado.
